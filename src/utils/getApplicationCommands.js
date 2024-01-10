@@ -1,11 +1,11 @@
-module.exports = async (supreme, guildId) => {
+module.exports = async (client, guildId) => {
   let applicationCommands;
 
   if (guildId) {
-    const guild = await supreme.guilds.fetch(guildId);
+    const guild = await client.guilds.fetch(guildId);
     applicationCommands = guild.commands;
-    } else {
-      applicationCommands = await supreme.rest.application.commands;
+  } else {
+    applicationCommands = await client.application.commands;
   }
 
   await applicationCommands.fetch();

@@ -2,15 +2,15 @@ require('dotenv').config();
 const { Client, IntentsBitField } = require('discord.js');
 const eventHandler = require('./handlers/eventHandler');
 
-const supreme = new Client({
+const client = new Client({
   intents: [
-    IntentsBitField.Flags.Guilds, 
-    IntentsBitField.Flags.GuildMembers, 
-    IntentsBitField.Flags.GuildMessages, 
-    IntentsBitField.Flags.MessageContent, 
+    IntentsBitField.Flags.Guilds,
+    IntentsBitField.Flags.GuildMembers,
+    IntentsBitField.Flags.GuildMessages,
+    IntentsBitField.Flags.MessageContent,
   ],
 });
 
-eventHandler(supreme);
+eventHandler(client);
 
-supreme.login(process.env.TOKEN);
+client.login(process.env.TOKEN);

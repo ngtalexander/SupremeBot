@@ -1,3 +1,3 @@
-module.exports = (supreme) => {
-console.log(`${supreme.user.tag} is online.`);
+module.exports = (client) => {
+console.log(`${client.user.tag} is online.`);
 };
